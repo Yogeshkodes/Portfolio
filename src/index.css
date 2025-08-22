@@ -1,0 +1,25 @@
+.calendar-wrapper {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+/* Hide scrollbar from the internal scroll container */
+.react-activity-calendar__scroll-container {
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* IE/Edge */
+  overflow-x: auto !important; /* Keep scroll functionality */
+  overflow-y: hidden !important;
+}
+
+.react-activity-calendar__scroll-container::-webkit-scrollbar {
+  display: none !important; /* Chrome, Safari, Opera */
+}
+
+/* Optional: Add some styling to the main calendar container */
+.react-activity-calendar {
+  width: fit-content;
+  margin: 0 auto;
+}
+
