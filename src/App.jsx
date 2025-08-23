@@ -2,7 +2,7 @@ import "./App.css";
 import Profile from "./components/Home.jsx";
 import GitHubSection from "./components/GithubCalendargraph.jsx";
 import AboutMe from "./components/AboutMe.jsx";
-import { BentoGridDemo } from "./components/Projects.jsx";
+import Projects from "./components/Projects.jsx";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
         <Profile />
         <GitHubSection />
         <AboutMe />
-        <BentoGridDemo />
+        <Projects />
       </div>
     </div>
   );

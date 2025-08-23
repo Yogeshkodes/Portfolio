@@ -1,7 +1,10 @@
+// import { BentoGridDemo } from "../features/bentogrid";
+
 // function Projects() {
 //   return (
 //     <div>
-//       <h2 className="text-3xl font-bold mt-15">Projects</h2>
+//       <h2 className="text-3xl mt-15 mb-10">Projects</h2>
+//       <BentoGridDemo />
 //     </div>
 //   );
 // }
@@ -9,78 +12,63 @@
 // export default Projects;
 
 import React from "react";
-import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
-import {
-  IconArrowWaveRightUp,
-  IconBoxAlignRightFilled,
-  IconBoxAlignTopLeft,
-  IconClipboardCopy,
-  IconFileBroken,
-  IconSignature,
-  IconTableColumn,
-} from "@tabler/icons-react";
 
-export function BentoGridDemo() {
+const ProjectCard = ({
+  title = "Project Title",
+  description = "A brief description of the project.",
+  imageUrl = "https://via.placeholder.com/400x200", // Fallback image
+  tags = ["React", "Tailwind", "JavaScript"],
+  demoUrl = "#",
+  githubUrl = "#",
+}) => {
   return (
-    <BentoGrid className="max-w-4xl mx-auto">
-      {items.map((item, i) => (
-        <BentoGridItem
-          key={i}
-          title={item.title}
-          description={item.description}
-          header={item.header}
-          icon={item.icon}
-          className={i === 3 || i === 6 ? "md:col-span-2" : ""}
-        />
-      ))}
-    </BentoGrid>
+    <div className="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+      {/* Project Image */}
+      <img
+        className="w-full h-48 object-cover"
+        src={imageUrl}
+        alt={`${title} screenshot`}
+      />
+
+      {/* Content Section */}
+      <div className="px-6 py-4">
+        <h3 className="font-bold text-xl mb-2 text-gray-800">{title}</h3>
+        <p className="text-gray-600 text-base mb-4">{description}</p>
+
+        {/* Tags */}
+        <div className="flex flex-wrap gap-2 mb-4">
+          {tags.map((tag, index) => (
+            <span
+              key={index}
+              className="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        {/* Action Buttons */}
+        <div className="flex justify-between">
+          <a
+            href={demoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600 transition-colors"
+          >
+            Live Demo
+          </a>
+          <a
+            href={githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-gray-800 text-white font-semibold py-2 px-4 rounded hover:bg-gray-900 transition-colors"
+          >
+            GitHub
+          </a>
+        </div>
+      </div>
+    </div>
   );
-}
-const Skeleton = () => (
-  <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200  to-neutral-100"></div>
-);
-const items = [
-  {
-    title: "The Dawn of Innovation",
-    description: "Explore the birth of groundbreaking ideas and inventions.",
-    header: <Skeleton />,
-    icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
-  },
-  {
-    title: "The Digital Revolution",
-    description: "Dive into the transformative power of technology.",
-    header: <Skeleton />,
-    icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
-  },
-  {
-    title: "The Art of Design",
-    description: "Discover the beauty of thoughtful and functional design.",
-    header: <Skeleton />,
-    icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
-  },
-  {
-    title: "The Power of Communication",
-    description:
-      "Understand the impact of effective communication in our lives.",
-    header: <Skeleton />,
-    icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
-  },
-  {
-    title: "The Pursuit of Knowledge",
-    description: "Join the quest for understanding and enlightenment.",
-    header: <Skeleton />,
-    icon: <IconArrowWaveRightUp className="h-4 w-4 text-neutral-500" />,
-  },
-  {
-    title: "The Joy of Creation",
-    description: "Experience the thrill of bringing ideas to life.",
-    header: <Skeleton />,
-    icon: <IconBoxAlignTopLeft className="h-4 w-4 text-neutral-500" />,
-  },
-  {
-    title: "The Spirit of Adventure",
-    description: "Embark on exciting journeys and thrilling discoveries.",
-    header: <Skeleton />,
-    icon: <IconBoxAlignRightFilled className="h-4 w-4 text-neutral-500" />,
-  },
-];
+};
+
+export default ProjectCard;

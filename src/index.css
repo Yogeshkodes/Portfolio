@@ -5,7 +5,7 @@
   padding: 1rem 0;
 }
 
-/* Hide scrollbar from the internal scroll container */
+/* Hide scrollbar on desktop */
 .react-activity-calendar__scroll-container {
   scrollbar-width: none !important; /* Firefox */
   -ms-overflow-style: none !important; /* IE/Edge */
@@ -23,3 +23,46 @@
   margin: 0 auto;
 }
 
+/* Show scrollbar on mobile/small screens */
+@media (max-width: 768px) {
+  .react-activity-calendar__scroll-container {
+    scrollbar-width: thin !important; /* Show thin scrollbar in Firefox */
+    -ms-overflow-style: scrollbar !important; /* Show scrollbar in IE/Edge */
+  }
+
+  .react-activity-calendar__scroll-container::-webkit-scrollbar {
+    display: block !important; /* Show scrollbar in Chrome, Safari, Opera */
+    height: 8px !important;
+  }
+
+  .react-activity-calendar__scroll-container::-webkit-scrollbar-track {
+    background: #f1f1f1 !important;
+    border-radius: 4px !important;
+  }
+
+  .react-activity-calendar__scroll-container::-webkit-scrollbar-thumb {
+    background: #c1c1c1 !important;
+    border-radius: 4px !important;
+  }
+
+  .react-activity-calendar__scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1 !important;
+  }
+
+  /* Reduce calendar size on mobile */
+  .react-activity-calendar {
+    transform: scale(0.95);
+    transform-origin: center;
+  }
+
+  .calendar-wrapper {
+    padding: 0.5rem 0;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+  .react-activity-calendar {
+    transform: scale(0.7); /* Even smaller for tiny screens */
+  }
+}

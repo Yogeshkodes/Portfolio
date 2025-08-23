@@ -35,13 +35,12 @@ function GitHubSection() {
   }, []);
 
   return (
-    <div className="mt-15 border border-neutral-200 p-2 rounded-lg shadow">
+    <div className="mt-15 border border-neutral-200   md:p-2 rounded-lg shadow m-auto">
       <div ref={calendarRef} className="calendar-wrapper">
         <GitHubCalendar
           username="yogeshkodes"
           hideMonthLabels={true}
           colorScheme="light"
-          fontSize={16}
         />
       </div>
     </div>
