@@ -1,74 +1,74 @@
-// import { BentoGridDemo } from "../features/bentogrid";
-
-// function Projects() {
-//   return (
-//     <div>
-//       <h2 className="text-3xl mt-15 mb-10">Projects</h2>
-//       <BentoGridDemo />
-//     </div>
-//   );
-// }
-
-// export default Projects;
-
 import React from "react";
+import ProjectCard from "../features/ProjectsCard"; // Adjust path
 
-const ProjectCard = ({
-  title = "Project Title",
-  description = "A brief description of the project.",
-  imageUrl = "https://via.placeholder.com/400x200", // Fallback image
-  tags = ["React", "Tailwind", "JavaScript"],
-  demoUrl = "#",
-  githubUrl = "#",
-}) => {
+const Projects = () => {
+  const projects = [
+    {
+      title: "E-Commerce App",
+      description:
+        "A full-stack online store with user authentication and payment integration.",
+      imageUrl: "https://example.com/ecommerce-screenshot.jpg",
+      tags: ["React", "Node.js", "MongoDB"],
+      demoUrl: "https://demo-ecommerce.com",
+      githubUrl: "https://github.com/yourusername/ecommerce",
+    },
+    {
+      title: "Portfolio Site",
+      description: "My personal portfolio showcasing projects and skills.",
+      imageUrl: "https://example.com/portfolio-screenshot.jpg",
+      tags: ["React", "Tailwind CSS"],
+      demoUrl: "https://yourportfolio.com",
+      githubUrl: "https://github.com/yourusername/portfolio",
+    },
+    {
+      title: "Portfolio Site",
+      description: "My personal portfolio showcasing projects and skills.",
+      imageUrl: "https://example.com/portfolio-screenshot.jpg",
+      tags: ["React", "Tailwind CSS"],
+      demoUrl: "https://yourportfolio.com",
+      githubUrl: "https://github.com/yourusername/portfolio",
+    },
+    {
+      title: "Portfolio Site",
+      description: "My personal portfolio showcasing projects and skills.",
+      imageUrl: "https://example.com/portfolio-screenshot.jpg",
+      tags: ["React", "Tailwind CSS"],
+      demoUrl: "https://yourportfolio.com",
+      githubUrl: "https://github.com/yourusername/portfolio",
+    },
+    {
+      title: "Portfolio Site",
+      description: "My personal portfolio showcasing projects and skills.",
+      imageUrl: "https://example.com/portfolio-screenshot.jpg",
+      tags: ["React", "Tailwind CSS"],
+      demoUrl: "https://yourportfolio.com",
+      githubUrl: "https://github.com/yourusername/portfolio",
+    },
+    {
+      title: "Portfolio Site",
+      description: "My personal portfolio showcasing projects and skills.",
+      imageUrl: "https://example.com/portfolio-screenshot.jpg",
+      tags: ["React", "Tailwind CSS"],
+      demoUrl: "https://yourportfolio.com",
+      githubUrl: "https://github.com/yourusername/portfolio",
+    },
+    // Add more projects...
+  ];
+
   return (
-    <div className="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-      {/* Project Image */}
-      <img
-        className="w-full h-48 object-cover"
-        src={imageUrl}
-        alt={`${title} screenshot`}
-      />
-
-      {/* Content Section */}
-      <div className="px-6 py-4">
-        <h3 className="font-bold text-xl mb-2 text-gray-800">{title}</h3>
-        <p className="text-gray-600 text-base mb-4">{description}</p>
-
-        {/* Tags */}
-        <div className="flex flex-wrap gap-2 mb-4">
-          {tags.map((tag, index) => (
-            <span
-              key={index}
-              className="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full"
-            >
-              {tag}
-            </span>
-          ))}
+    <>
+      <h2 className="text-3xl mt-15 mb-10">Projects</h2>
+      <section className="p-5 bg-neutral-100 rounded-md">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2  gap-8">
+            {projects.map((project, index) => (
+              <ProjectCard key={index} {...project} />
+            ))}
+          </div>
         </div>
-
-        {/* Action Buttons */}
-        <div className="flex justify-between">
-          <a
-            href={demoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600 transition-colors"
-          >
-            Live Demo
-          </a>
-          <a
-            href={githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-gray-800 text-white font-semibold py-2 px-4 rounded hover:bg-gray-900 transition-colors"
-          >
-            GitHub
-          </a>
-        </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 };
 
-export default ProjectCard;
+export default Projects;
