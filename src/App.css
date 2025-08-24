@@ -1,8 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+/* Import fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&display=swap");
 
 html {
-  font-family: "SF Mono", "Monaco", "Inconsolata", monospace;
+  font-family: "Inter", sans-serif; /* Body text */
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif; /* Headings */
+}
+  
 @import "tailwindcss";
 @import "tw-animate-css";
 
