@@ -1,15 +1,17 @@
 import React from "react";
 
 const ProjectCard = ({
+  isOpenModal,
+  onViewDetails,
   title = "Project Title",
   description = "A brief description of the project.",
-  imageUrl = "https://via.placeholder.com/400x200", // Fallback image
+  imageUrl = "https://via.placeholder.com/400x200",
   tags = ["React", "Tailwind", "JavaScript"],
   demoUrl = "#",
   githubUrl = "#",
 }) => {
   return (
-    <div className="max-w-sm rounded-lg overflow-hidden shadow bg-white transition-transform duration-300 hover:scale-101 hover:shadow-lg">
+    <div className="max-w-sm rounded-lg overflow-hidden shadow-2xs  border-[#EFF0F3] border bg-[#F9FAFB] transition-transform duration-300 hover:scale-101 hover:shadow-lg">
       {/* Project Image */}
       <div className="flex items-center justify-center h-40">
         <img
@@ -40,23 +42,14 @@ const ProjectCard = ({
         </div>
 
         {/* Action Buttons */}
-        <div className="flex justify-between">
-          <a
-            href={demoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600 transition-colors"
+
+        <div className="flex justify-end">
+          <button
+            className="bg-blue-500 text-white font-semibold py-1 px-2 rounded hover:bg-blue-600 transition-colors"
+            onClick={onViewDetails}
           >
-            Live Demo
-          </a>
-          <a
-            href={githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-gray-800 text-white font-semibold py-2 px-4 rounded hover:bg-gray-900 transition-colors"
-          >
-            GitHub
-          </a>
+            View Details
+          </button>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 function AboutMe() {
   return (
     <div>
-      <h2 className="text-3xl  mt-10 md:mt-15">About Me</h2>
+      <h2 className="text-2xl md:text-3xl mt-10 md:mt-15">About Me</h2>
       <p className="mt-5  text-gray-600 text-wrap text-[14px] md:text-[16px]">
         Passionate Software Developer with a strong foundation in full-stack
         development, cloud computing and DevOps practices. Additional experience

@@ -1,7 +1,21 @@
 import React from "react";
-import ProjectCard from "../features/ProjectsCard"; // Adjust path
+import { useState } from "react";
+import ProjectCard from "../features/ProjectsCard";
+import ProjectModal from "../features/ProjectModal";
 
 const Projects = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  const openModal = (project) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedProject(null);
+  };
   const projects = [
     {
       title: "E-Commerce App",
@@ -57,15 +71,24 @@ const Projects = () => {
 
   return (
     <>
-      <h2 className="text-3xl mt-15 mb-10">Projects</h2>
-      <section className="p-5 bg-neutral-100 rounded-md">
+    <h2 className="text-2xl md:text-3xl mt-15 mb-8">Projects</h2>
+      <section className="p-5 bg-white rounded-md">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2  gap-8">
             {projects.map((project, index) => (
-              <ProjectCard key={index} {...project} />
+              <ProjectCard
+                key={index}
+                {...project}
+                onViewDetails={() => openModal(project)}
+              />
             ))}
           </div>
         </div>
+        <ProjectModal
+          isOpen={isModalOpen}
+          onClose={closeModal}
+          project={selectedProject}
+        />
       </section>
     </>
   );

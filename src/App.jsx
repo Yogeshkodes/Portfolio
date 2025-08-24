@@ -3,6 +3,8 @@ import Profile from "./components/Home.jsx";
 import GitHubSection from "./components/GithubCalendargraph.jsx";
 import AboutMe from "./components/AboutMe.jsx";
 import Projects from "./components/Projects.jsx";
+import Experience from "./components/Experience.jsx";
+import Skills from "./components/Skills.jsx";
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
         <GitHubSection />
         <AboutMe />
         <Projects />
+        <Experience />
+        <Skills />
       </div>
     </div>
   );
