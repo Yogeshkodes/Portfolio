@@ -1,5 +1,8 @@
 /* Import fonts */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&display=swap");
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
 
 html {
   font-family: "Inter", sans-serif; /* Body text */
@@ -13,7 +16,7 @@ h5,
 h6 {
   font-family: "Montserrat", sans-serif; /* Headings */
 }
-  
+
 @import "tailwindcss";
 @import "tw-animate-css";
 

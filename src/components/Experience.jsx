@@ -4,30 +4,45 @@ import ExperienceCard from "../features/ExperienceCard"; // Adjust path
 const Experience = () => {
   const experiences = [
     {
-      company: "CrackedDevs",
-      location: "US Remote",
-      date: "May 2025 - Present",
-      role: "Full Stack Engineer",
-      description:
-        "Building a application to the folks who love to customize thier subliminals.",
+      company: "Wipro",
+      location: "Pune",
+      date: "Sep 2024 - Apr 2025",
+      role: "L1 React Developer",
+      description: [
+        "Developed and maintained internal web applications using React.js.",
+        "Built reusable and scalable UI components to improve development efficiency.",
+        "Collaborated with product teams to design user-friendly features and improve overall UX.",
+        "Optimized front-end performance, reducing load times and improving responsiveness.",
+        "Integrated APIs and worked on debugging and fixing UI-related issues.",
+      ],
+    },
+
+    {
+      company: "Wipro - Client: RSA",
+      location: "Hybrid",
+      date: "Sep 2023 - March 2024",
+      role: "Major Incident Manager",
+      description: [
+        "Led incident and problem management processes aligned with ITIL standards.",
+        "Worked closely with cross-functional teams including Networking, DB2, and Windows to drive quick resolutions.",
+        "Coordinated escalations with technical teams and ensured proper documentation of issues.",
+        "Monitored SLAs and KPIs to track operational efficiency and compliance.",
+        "Identified process gaps and recommended improvements to streamline IT operations.",
+      ],
     },
     {
-      company: "InterspectAl",
-      location: "Freelance",
-      date: "Nov 2024 - Present",
-      role: "Full Stack Engineer",
-      description:
-        "Developed a real-time AI interview platform with live transcription, audio processing, and TTS.",
+      company: "Wipro - Client: Liverpool",
+      location: "Hybrid",
+      date: "Feb 2022 - June 2023",
+      role: "Cloud Administrator",
+      description: [
+        "Managed VMware vSphere and VMware Horizon infrastructure supporting 1200+ virtual desktops (VDIs).",
+        "Performed daily health checks, monitored system performance, and ensured high availability of services.",
+        "Diagnosed and resolved end-user issues related to VDI machines, reducing downtime and improving user experience.",
+        "Collaborated with team members to implement best practices for system stability and security.",
+        "Generated reports on VDI performance and suggested improvements for infrastructure optimization.",
+      ],
     },
-    {
-      company: "Team Tamizhan",
-      location: "Remote",
-      date: "Dec 2022 - May 2024",
-      role: "Full Stack/DevOps Engineer",
-      description:
-        "Cutting-edge tools using React JS for dynamic interfaces, seamlessly integrated with GitLab for version control and CI/CD.",
-    },
-    // Add more...
   ];
 
   return (
